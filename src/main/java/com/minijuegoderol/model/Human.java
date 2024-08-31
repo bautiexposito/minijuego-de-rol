@@ -10,7 +10,8 @@ public class Human extends Character{
 
     @Override
     public int basicAttack() {
-        return parseInt(String.valueOf(getPower()*getAgility()*getHealth()*0.002));
+        double result = getPower() * getAgility() * getHealth() * 0.002;
+        return (int) Math.round(result);
     }
 
     @Override
