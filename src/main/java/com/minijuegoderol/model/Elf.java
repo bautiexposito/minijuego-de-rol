@@ -4,8 +4,8 @@ import static java.lang.Integer.parseInt;
 
 public class Elf extends Character{
 
-    public Elf(String name, int age, int health, int armor, int defense, int power, int agility) {
-        super(name, age, health, armor, defense, power, agility);
+    public Elf(String name, String raza, int age, int health, int armor, int defense, int power, int agility) {
+        super(name, raza, age, health, armor, defense, power, agility);
     }
 
     @Override

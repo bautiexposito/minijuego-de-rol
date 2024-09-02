@@ -26,7 +26,7 @@ public class Main {
             switch (opcion){
                 case 1:
                     System.out.println("La partida esta comenzando");
-                    System.out.println("...");
+                    System.out.println("");
                     game.iniciarJuego();
                     break;
                 case 2:
@@ -38,7 +38,7 @@ public class Main {
                 default:
                     System.out.println("Error al ingresar una opcion");
                     System.out.println("Intente nuevamente");
-                    break;
+                    continue;
             }
         }
     }
