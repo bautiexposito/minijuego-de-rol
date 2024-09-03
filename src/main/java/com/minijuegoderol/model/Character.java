@@ -109,4 +109,10 @@ public abstract class Character {
     public abstract int specialAttack();
 
     public abstract int heal();
+
+    public abstract int defensePower();
+
+    public abstract int attackValue();
+
+    public abstract int attackEffectiveness();
 }

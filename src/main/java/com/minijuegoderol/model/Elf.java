@@ -23,4 +23,19 @@ public class Elf extends Character{
     public int heal(){
         return 40;
     }
+
+    @Override
+    public int defensePower(){
+        return 0;
+    }
+
+    @Override
+    public int attackValue(){
+        return 0;
+    }
+
+    @Override
+    public int attackEffectiveness(){
+        return 0;
+    }
 }
