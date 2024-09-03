@@ -38,7 +38,6 @@ public class Main {
                 default:
                     System.out.println("Error al ingresar una opcion");
                     System.out.println("Intente nuevamente");
-                    continue;
             }
         }
     }

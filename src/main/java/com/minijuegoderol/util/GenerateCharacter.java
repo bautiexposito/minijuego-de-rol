@@ -11,11 +11,11 @@ public class GenerateCharacter {
     private Random random = new Random();
 
     private static final List<String> nombresElf = Arrays.asList("Amarïe", "Éowyn", "Lúthien","Fadabiða","Aredhel","Earendil","Idril","Lia","Nienna");
-    private static final List<String> nombresHuman = Arrays.asList("Batista", "Romeo","Hermes","Diodoro","Spartacus","Marcus","Columbus","Kalendio");
+    private static final List<String> nombresHuman = Arrays.asList("Batista", "Romeo","Hermes","Diodoro","Spartacus","Marcus","Columbus","Kalendio","Doménico","Isidoro","Leónidas","Teodoro");
     private static final List<String> nombresOrc = Arrays.asList("Grom","Thrum","Gorrum","Rok","Naznob","Jughog","Sniknob","Homraz","Snak","Badbog");
 
     public Elf generateElf(){
-        int numeroAleatorio = random.nextInt(3);
+        int numeroAleatorio = random.nextInt(nombresElf.size());
         String nombre = nombresElf.get(numeroAleatorio);
         String raza = "Elfo";
         int edad = random.nextInt(200)+100;
@@ -28,7 +28,7 @@ public class GenerateCharacter {
     }
 
     public Human generateHuman(){
-        int numeroAleatorio = random.nextInt(3);
+        int numeroAleatorio = random.nextInt(nombresHuman.size());
         String nombre = nombresHuman.get(numeroAleatorio);
         String raza = "Humano";
         int edad = random.nextInt(45)+21;
@@ -41,7 +41,7 @@ public class GenerateCharacter {
     }
 
     public Orc generateOrc(){
-        int numeroAleatorio = random.nextInt(3);
+        int numeroAleatorio = random.nextInt(nombresOrc.size());
         String nombre = nombresOrc.get(numeroAleatorio);
         String raza = "Orco";
         int edad = random.nextInt(600)+300;

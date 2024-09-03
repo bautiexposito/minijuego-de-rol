@@ -8,22 +8,33 @@ public class Round {
 
     public void iniciarCombate(ArrayList<Character> raza1, ArrayList<Character> raza2){
         Character pj11 = raza1.get(0);
-        Character pj12 = raza1.get(1);
-        Character pj13 = raza1.get(2);
         Character pj21 = raza2.get(0);
-        Character pj22 = raza2.get(1);
-        Character pj23 = raza2.get(2);
         System.out.println(pj11.getRaza()+"s VS "+pj21.getRaza()+"s");
         System.out.println("");
+        int contador =1;
 
         while(raza1.size()>0 && raza2.size()>0){
+            System.out.println("- - - - Round "+contador+" - - - -");
+            if(contador==1){
+                System.out.println(raza1.get(0).getName()+" VS "+raza2.get(0).getName());
+                System.out.println("");
+            }
             iniciarRound(raza1.get(0),raza2.get(0));
+            contador++;
             if(raza2.get(0).getHealth()<=0){
                 raza2.remove(0);
+                contador = 1;
+            }
+            System.out.println("- - - - Round "+contador+" - - - -");
+            if(contador==1){
+                System.out.println(raza1.get(0).getName()+" VS "+raza2.get(0).getName());
+                System.out.println("");
             }
             iniciarRound(raza2.get(0),raza1.get(0));
+            contador++;
             if(raza1.get(0).getHealth()<=0){
                 raza1.remove(0);
+                contador = 1;
             }
         }
 

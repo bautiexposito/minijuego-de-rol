@@ -10,7 +10,7 @@ public class Human extends Character{
 
     @Override
     public int basicAttack() {
-        double result = getPower() * getAgility() * getHealth() * 0.002;
+        double result = getPower() * getAgility() * getHealth() * 0.008;
         return (int) Math.round(result);
     }
 

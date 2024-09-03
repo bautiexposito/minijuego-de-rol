@@ -86,6 +86,19 @@ public abstract class Character {
         this.agility = agility;
     }
 
+    public void getInfo(){
+        System.out.println("- - - - - - - - - - - ");
+        System.out.println("Nombre: " + name);
+        System.out.println("Raza: " + raza);
+        System.out.println("Edad: " + age);
+        System.out.println("Salud: " + health);
+        System.out.println("Armadura: " + armor);
+        System.out.println("Defensa: " + defense);
+        System.out.println("Poder: " + power);
+        System.out.println("Agilidad: " + agility);
+        System.out.println("");
+    }
+
     public void takeDamage(int amount) {
         this.health -= amount;
         if (this.health < 0) this.health = 0;
