@@ -1,6 +1,5 @@
 package com.minijuegoderol.game;
 
-import com.minijuegoderol.model.*;
 import com.minijuegoderol.model.Character;
 import com.minijuegoderol.util.GenerateCharacter;
 
@@ -10,26 +9,20 @@ import java.util.Scanner;
 public class Game {
 
     private GenerateCharacter generateCharacter;
-    private Character jugador11;
-    private Character jugador12;
-    private Character jugador13;
-    private Character jugador21;
-    private Character jugador22;
-    private Character jugador23;
-    private Character jugador31;
-    private Character jugador32;
-    private Character jugador33;
+    private Round round;
     private ArrayList<Character> raza1;
     private ArrayList<Character> raza2;
     private ArrayList<Character> raza3;
 
-    Round round = new Round();
+    CombatSystem combatSystem = new CombatSystem();
 
     public Game() {
         this.generateCharacter = new GenerateCharacter();
         this.raza1 = new ArrayList<>();
         this.raza2 = new ArrayList<>();
         this.raza3 = new ArrayList<>();
+        CombatSystem combatSystem = new CombatSystem();
+        this.round = new Round(combatSystem);
     }
 
     public void iniciarJuego(){
@@ -46,78 +39,60 @@ public class Game {
             switch(opcion){
                 case 1:
                     System.out.println("Personajes del Jugador 1:");
-                    jugador11 = generateCharacter.generateHuman();
-                    jugador12 = generateCharacter.generateHuman();
-                    jugador13 = generateCharacter.generateHuman();
-                    raza1.add(jugador11);
-                    raza1.add(jugador12);
-                    raza1.add(jugador13);
-                    jugador11.getInfo();
-                    jugador12.getInfo();
-                    jugador13.getInfo();
+                    raza1.add(generateCharacter.generateHuman());
+                    raza1.add(generateCharacter.generateHuman());
+                    raza1.add(generateCharacter.generateHuman());
+                    raza1.get(0).getInfo();
+                    raza1.get(1).getInfo();
+                    raza1.get(2).getInfo();
 
                     System.out.println("Personajes del Jugador 2:");
-                    jugador21 = generateCharacter.generateElf();
-                    jugador22 = generateCharacter.generateElf();
-                    jugador23 = generateCharacter.generateElf();
-                    raza2.add(jugador21);
-                    raza2.add(jugador22);
-                    raza2.add(jugador23);
-                    jugador21.getInfo();
-                    jugador22.getInfo();
-                    jugador23.getInfo();
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.get(0).getInfo();
+                    raza2.get(1).getInfo();
+                    raza2.get(2).getInfo();
 
                     round.iniciarCombate(raza1,raza2);
                     break;
 
                 case 2:
                     System.out.println("Personajes del Jugador 1:");
-                    jugador21 = generateCharacter.generateElf();
-                    jugador22 = generateCharacter.generateElf();
-                    jugador23 = generateCharacter.generateElf();
-                    raza2.add(jugador21);
-                    raza2.add(jugador22);
-                    raza2.add(jugador23);
-                    jugador21.getInfo();
-                    jugador22.getInfo();
-                    jugador23.getInfo();
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.get(0).getInfo();
+                    raza2.get(1).getInfo();
+                    raza2.get(2).getInfo();
 
                     System.out.println("Personajes del Jugador 2:");
-                    jugador31 = generateCharacter.generateOrc();
-                    jugador32 = generateCharacter.generateOrc();
-                    jugador33 = generateCharacter.generateOrc();
-                    raza3.add(jugador31);
-                    raza3.add(jugador32);
-                    raza3.add(jugador33);
-                    jugador31.getInfo();
-                    jugador32.getInfo();
-                    jugador33.getInfo();
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.get(0).getInfo();
+                    raza3.get(1).getInfo();
+                    raza3.get(2).getInfo();
 
                     round.iniciarCombate(raza2,raza3);
                     break;
 
                 case 3:
                     System.out.println("Personajes del Jugador 1:");
-                    jugador31 = generateCharacter.generateOrc();
-                    jugador32 = generateCharacter.generateOrc();
-                    jugador33 = generateCharacter.generateOrc();
-                    raza3.add(jugador31);
-                    raza3.add(jugador32);
-                    raza3.add(jugador33);
-                    jugador31.getInfo();
-                    jugador32.getInfo();
-                    jugador33.getInfo();
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.add(generateCharacter.generateOrc());
+                    raza3.get(0).getInfo();
+                    raza3.get(1).getInfo();
+                    raza3.get(2).getInfo();
 
                     System.out.println("Personajes del Jugador 2:");
-                    jugador21 = generateCharacter.generateElf();
-                    jugador22 = generateCharacter.generateElf();
-                    jugador23 = generateCharacter.generateElf();
-                    raza2.add(jugador21);
-                    raza2.add(jugador22);
-                    raza2.add(jugador23);
-                    jugador21.getInfo();
-                    jugador22.getInfo();
-                    jugador23.getInfo();
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.add(generateCharacter.generateElf());
+                    raza2.get(0).getInfo();
+                    raza2.get(1).getInfo();
+                    raza2.get(2).getInfo();
 
                     round.iniciarCombate(raza3,raza2);
                     break;

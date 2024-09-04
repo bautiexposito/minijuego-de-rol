@@ -23,7 +23,7 @@ public class GenerateCharacter {
         int defensa = random.nextInt(6)+2;
         int poder = random.nextInt(4)+2;
 
-        Elf elf = new Elf(nombre, raza, edad, 200, armadura, defensa, poder, 10);
+        Elf elf = new Elf(nombre, raza, edad, 1, 200, armadura, defensa, poder, 10);
         return elf;
     }
 
@@ -36,7 +36,7 @@ public class GenerateCharacter {
         int defensa = random.nextInt(10)+5;
         int poder = random.nextInt(10)+6;
 
-        Human human = new Human(nombre, raza, edad, 100, armadura, defensa, poder, 7);
+        Human human = new Human(nombre, raza, edad, 1, 100, armadura, defensa, poder, 7);
         return human;
     }
 
@@ -48,7 +48,7 @@ public class GenerateCharacter {
         int armadura = random.nextInt(20) + 5;
         int defensa = random.nextInt(7)+3;
 
-        Orc orc = new Orc(nombre, raza, edad, 300, armadura, defensa, 10, 4);
+        Orc orc = new Orc(nombre, raza, edad, 1, 300, armadura, defensa, 10, 4);
         return orc;
     }
 

@@ -7,8 +7,12 @@ import java.util.Scanner;
 
 public class Round {
 
+    private CombatSystem combatSystem;
     Scanner scanner = new Scanner(System.in);
-    String espacio = "";
+
+    public Round (CombatSystem combatSystem){
+        this.combatSystem = combatSystem;
+    }
 
     public void iniciarCombate(ArrayList<Character> raza1, ArrayList<Character> raza2){
         Character pj11 = raza1.get(0);
@@ -19,7 +23,7 @@ public class Round {
 
         while(raza1.size()>0 && raza2.size()>0){
             System.out.println("- - - - Round "+contador+" - - - -");
-            espacio = scanner.nextLine();
+            scanner.nextLine();
             if(contador==1){
                 System.out.println(raza1.get(0).getName()+" VS "+raza2.get(0).getName());
                 System.out.println("");
@@ -32,7 +36,7 @@ public class Round {
             }
 
             System.out.println("- - - - Round "+contador+" - - - -");
-            espacio = scanner.nextLine();
+            scanner.nextLine();
             if(contador==1){
                 System.out.println(raza1.get(0).getName()+" VS "+raza2.get(0).getName());
                 System.out.println("");
@@ -56,7 +60,7 @@ public class Round {
 
     public void iniciarRound(Character jugador1, Character jugador2){
         System.out.println(jugador1.getName()+" esta atacando");
-        int ataque = jugador1.basicAttack();
+        int ataque = combatSystem.damageCaused(jugador1, jugador2);
         System.out.println("Inflige "+ataque+" de daño");
         jugador2.takeDamage(ataque);
         if(jugador2.getHealth()<=0){

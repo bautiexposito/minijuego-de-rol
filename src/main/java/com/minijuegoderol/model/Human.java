@@ -4,14 +4,8 @@ import static java.lang.Integer.parseInt;
 
 public class Human extends Character{
 
-    public Human(String name, String raza, int age, int health, int armor, int defense, int power, int agility) {
-        super(name, raza, age, health, armor, defense, power, agility);
-    }
-
-    @Override
-    public int basicAttack() {
-        double result = getPower() * getAgility() * getHealth() * 0.008;
-        return (int) Math.round(result);
+    public Human(String name, String raza, int age, int level, int health, int armor, int defense, int power, int agility) {
+        super(name, raza, age, level, health, armor, defense, power, agility);
     }
 
     @Override
@@ -22,20 +16,5 @@ public class Human extends Character{
     @Override
     public int heal(){
         return 25;
-    }
-
-    @Override
-    public int defensePower(){
-        return 0;
-    }
-
-    @Override
-    public int attackValue(){
-        return 0;
-    }
-
-    @Override
-    public int attackEffectiveness(){
-        return 0;
     }
 }

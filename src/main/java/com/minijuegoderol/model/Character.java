@@ -1,20 +1,26 @@
 package com.minijuegoderol.model;
 
+import java.util.Random;
+
 public abstract class Character {
+
+    private Random random = new Random();
 
     private String name;
     private String raza;
     private int age;
+    private int level;
     private int health;
     private int armor;
     private int defense;
     private int power;
     private int agility;
 
-    public Character(String name, String raza, int age, int health, int armor, int defense, int power, int agility) {
+    public Character(String name, String raza, int age, int level, int health, int armor, int defense, int power, int agility) {
         this.name = name;
         this.raza = raza;
         this.age = age;
+        this.level = level;
         this.health = health;
         this.armor = armor;
         this.defense = defense;
@@ -91,6 +97,7 @@ public abstract class Character {
         System.out.println("Nombre: " + name);
         System.out.println("Raza: " + raza);
         System.out.println("Edad: " + age);
+        System.out.println("Nivel: " + level);
         System.out.println("Salud: " + health);
         System.out.println("Armadura: " + armor);
         System.out.println("Defensa: " + defense);
@@ -104,15 +111,36 @@ public abstract class Character {
         if (this.health < 0) this.health = 0;
     }
 
-    public abstract int basicAttack();
+    public int basicAttack(){
+        if (powerAttack()*attackEffectiveness()*attackValue()>99){
+            return 100;
+        } else if (powerAttack()*attackEffectiveness()*attackValue()<1){
+            return 0;
+        } else{
+            return powerAttack()*attackEffectiveness()*attackValue();
+        }
+    }
+
+    public int powerAttack(){
+        return agility*power*level;
+    }
+
+    public int attackEffectiveness(){
+        int num = random.nextInt(100)+1;
+        return (int) Math.round(num*0.01);
+    }
+
+    public int attackValue(){
+        return powerAttack()*attackEffectiveness();
+    }
+
+    public int defensePower(){
+        return armor+agility;
+    }
+
+    //
 
     public abstract int specialAttack();
 
     public abstract int heal();
-
-    public abstract int defensePower();
-
-    public abstract int attackValue();
-
-    public abstract int attackEffectiveness();
 }
