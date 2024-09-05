@@ -19,6 +19,8 @@ public class Round {
         Character pj21 = raza2.get(0);
         System.out.println(pj11.getRaza()+"s VS "+pj21.getRaza()+"s");
         System.out.println("");
+        System.out.println("El sistema ha realizado el sorteo, y comienzan atacando los +");
+        System.out.println("");
         int contador =1;
 
         while(raza1.size()>0 && raza2.size()>0){

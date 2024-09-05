@@ -112,12 +112,12 @@ public abstract class Character {
     }
 
     public int basicAttack(){
-        if (powerAttack()*attackEffectiveness()*attackValue()>99){
-            return 100;
-        } else if (powerAttack()*attackEffectiveness()*attackValue()<1){
-            return 0;
+        if (powerAttack()+attackEffectiveness()+attackValue()>98){
+            return 99;
+        } else if (powerAttack()+attackEffectiveness()+attackValue()<2){
+            return 1;
         } else{
-            return powerAttack()*attackEffectiveness()*attackValue();
+            return powerAttack()+attackEffectiveness()+attackValue();
         }
     }
 
