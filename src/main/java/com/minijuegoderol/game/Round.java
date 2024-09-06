@@ -17,9 +17,6 @@ public class Round {
     public void iniciarCombate(ArrayList<Character> raza1, ArrayList<Character> raza2){
         Character pj11 = raza1.get(0);
         Character pj21 = raza2.get(0);
-        System.out.println(pj11.getRaza()+"s VS "+pj21.getRaza()+"s");
-        System.out.println("");
-        System.out.println("El sistema ha realizado el sorteo, y comienzan atacando los +");
         System.out.println("");
         int contador =1;
 
