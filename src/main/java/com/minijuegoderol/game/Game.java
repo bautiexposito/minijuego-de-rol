@@ -66,7 +66,7 @@ public class Game {
                     } else{
                         System.out.println("Comienzan atacando los Elfos\n");
                         System.out.println(" - - - - Elfos VS Humanos - - - -\n");
-                        round.iniciarCombate(raza1,raza2);
+                        round.iniciarCombate(raza2,raza1);
                     }
                     System.out.println("");
                     break;
