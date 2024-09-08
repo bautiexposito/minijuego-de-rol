@@ -65,26 +65,28 @@ public class Round {
         }
         System.out.println("");
 
-        System.out.println("A continuacion, mencionamos a los muertos en combate:");
-        System.out.println("");
-        scanner.nextLine();
-        for(Character personaje: razaMuertos){
-            personaje.getInfo();
+        imprimirMuertos();
+    }
+
+    public void iniciarRound(Character jugador1, Character jugador2) {
+        System.out.println(jugador1.getName() + " el " + jugador1.getRaza() + " esta atacando");
+        int ataque = combatSystem.damageCaused(jugador1, jugador2);
+        System.out.println("Inflige " + ataque + " de daño");
+        jugador2.takeDamage(ataque);
+        if (jugador2.getHealth() > 0) {
+            System.out.println(jugador2.getName() + " queda con " + jugador2.getHealth() + " de vida");
             System.out.println("");
         }
     }
 
-    public void iniciarRound(Character jugador1, Character jugador2){
-        System.out.println(jugador1.getName()+" el "+jugador1.getRaza()+" esta atacando");
-        int ataque = combatSystem.damageCaused(jugador1, jugador2);
-        System.out.println("Inflige "+ataque+" de daño");
-        jugador2.takeDamage(ataque);
-        if(jugador2.getHealth()<=0){
-            System.out.println(jugador2.getName()+" ha muerto");
-        } else{
-            System.out.println(jugador2.getName()+" queda con "+jugador2.getHealth()+" de vida");
-        }
+    public void imprimirMuertos () {
+        System.out.println("A continuacion, mencionamos a los muertos en combate:");
+        scanner.nextLine();
         System.out.println("");
+        scanner.nextLine();
+        for (Character personaje : razaMuertos) {
+            personaje.getInfo();
+            System.out.println("");
+        }
     }
-
 }

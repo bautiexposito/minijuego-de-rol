@@ -19,8 +19,9 @@ public class ConsoleUI {
             int opcion=1;
             while(opcion!=6){
                 System.out.println("");
+                System.out.println("- - - - - MENU - - - - -");
                 System.out.println("Opcion 1: Iniciar Partida Rapida");
-                System.out.println("Opcion 2: Iniciar Campaña por el Trono");
+                System.out.println("Opcion 2: Iniciar la Guerra por el Trono");
                 System.out.println("Opcion 3: Ver Historial de Partidas");
                 System.out.println("Opcion 4: Eliminar Historial");
                 System.out.println("Opcion 5: Leer Instrucciones");
@@ -35,10 +36,12 @@ public class ConsoleUI {
                     case 1:
                         System.out.println("La Partida Rapida esta comenzando...");
                         System.out.println("");
-                        game.iniciarJuego();
+                        game.iniciarPartida();
                         break;
                     case 2:
-                        System.out.println("La Campaña por el Trono esta comenzando...");
+                        System.out.println("La Guerra por el Trono esta comenzando...");
+                        System.out.println("");
+                        game.iniciarGuerra();
                         break;
                     case 3:
                         System.out.println("Historial de Partidas:");

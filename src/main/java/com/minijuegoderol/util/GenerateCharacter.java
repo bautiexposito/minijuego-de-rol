@@ -27,6 +27,16 @@ public class GenerateCharacter {
         return elf;
     }
 
+    public Elf generateElfWithParameters(String nombre, int edad){
+        String raza = "Elfo";
+        int armadura = random.nextInt(7) + 1;
+        int defensa = random.nextInt(6)+2;
+        int poder = random.nextInt(4)+2;
+
+        Elf elf = new Elf(nombre, raza, edad, 1, 200, armadura, defensa, poder, 10);
+        return elf;
+    }
+
     public Human generateHuman(){
         int numeroAleatorio = random.nextInt(nombresHuman.size());
         String nombre = nombresHuman.get(numeroAleatorio);
@@ -40,11 +50,30 @@ public class GenerateCharacter {
         return human;
     }
 
+    public Human generateHumanWithParameters(String nombre, int edad){
+        String raza = "Humano";
+        int armadura = random.nextInt(10) + 1;
+        int defensa = random.nextInt(10)+5;
+        int poder = random.nextInt(10)+6;
+
+        Human human = new Human(nombre, raza, edad, 1, 100, armadura, defensa, poder, 7);
+        return human;
+    }
+
     public Orc generateOrc(){
         int numeroAleatorio = random.nextInt(nombresOrc.size());
         String nombre = nombresOrc.get(numeroAleatorio);
         String raza = "Orco";
         int edad = random.nextInt(600)+300;
+        int armadura = random.nextInt(4) + 1;
+        int defensa = random.nextInt(7)+3;
+
+        Orc orc = new Orc(nombre, raza, edad, 1, 300, armadura, defensa, 10, 4);
+        return orc;
+    }
+
+    public Orc generateOrcWithParameters(String nombre, int edad){
+        String raza = "Orco";
         int armadura = random.nextInt(4) + 1;
         int defensa = random.nextInt(7)+3;
 
