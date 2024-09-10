@@ -10,7 +10,7 @@ public class Orc extends Character{
 
     @Override
     public int specialAttack() {
-        return parseInt(String.valueOf(getPower()*getAgility()*getHealth()*0.006));
+        return (int) (basicAttack()*1.2);
     }
 
     @Override

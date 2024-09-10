@@ -92,6 +92,14 @@ public abstract class Character {
         this.agility = agility;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public void getInfo(){
         System.out.println("- - - - - - - - - - - ");
         System.out.println("Nombre: " + name);
@@ -137,8 +145,6 @@ public abstract class Character {
     public int defensePower(){
         return armor+agility;
     }
-
-    //
 
     public abstract int specialAttack();
 

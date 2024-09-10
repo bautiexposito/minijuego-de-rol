@@ -68,7 +68,7 @@ public class GenerateCharacter {
         int armadura = random.nextInt(4) + 1;
         int defensa = random.nextInt(7)+3;
 
-        Orc orc = new Orc(nombre, raza, edad, 1, 300, armadura, defensa, 10, 4);
+        Orc orc = new Orc(nombre, raza, edad, 1, 250, armadura, defensa, 10, 4);
         return orc;
     }
 
@@ -77,7 +77,7 @@ public class GenerateCharacter {
         int armadura = random.nextInt(4) + 1;
         int defensa = random.nextInt(7)+3;
 
-        Orc orc = new Orc(nombre, raza, edad, 1, 300, armadura, defensa, 10, 4);
+        Orc orc = new Orc(nombre, raza, edad, 1, 250, armadura, defensa, 10, 4);
         return orc;
     }
 

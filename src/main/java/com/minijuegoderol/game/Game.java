@@ -42,10 +42,12 @@ public class Game {
             switch(opcion){
                 case 1:
                     System.out.println("Personajes del Jugador 1:");
-                    crearEImprimirPersonajes(raza1,"Humano");
+                    crearPersonajes("Humano");
+                    imprimirPersonajes(raza1);
 
                     System.out.println("Personajes del Jugador 2:");
-                    crearEImprimirPersonajes(raza2,"Elfo");
+                    crearPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
 
                     System.out.println("El sistema esta realizando el sorteo...\n");
                     numeroAleatorio = random.nextInt(2);
@@ -65,10 +67,12 @@ public class Game {
 
                 case 2:
                     System.out.println("Personajes del Jugador 1:");
-                    crearEImprimirPersonajes(raza2,"Elfo");
+                    crearPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
 
                     System.out.println("Personajes del Jugador 2:");
-                    crearEImprimirPersonajes(raza3,"Orco");
+                    crearPersonajes("Orco");
+                    imprimirPersonajes(raza3);
 
                     System.out.println("El sistema esta realizando el sorteo...\n");
                     numeroAleatorio = random.nextInt(2);
@@ -88,10 +92,12 @@ public class Game {
 
                 case 3:
                     System.out.println("Personajes del Jugador 1:");
-                    crearEImprimirPersonajes(raza3,"Orco");
+                    crearPersonajes("Orco");
+                    imprimirPersonajes(raza3);
 
                     System.out.println("Personajes del Jugador 2:");
-                    crearEImprimirPersonajes(raza2,"Elfo");
+                    crearPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
 
                     System.out.println("El sistema esta realizando el sorteo...\n");
                     numeroAleatorio = random.nextInt(2);
@@ -114,6 +120,9 @@ public class Game {
                     System.out.println("Intente nuevamente");
                     continue;
             }
+            raza1.clear();
+            raza2.clear();
+            raza3.clear();
             break;
         }
         System.out.println("");
@@ -149,10 +158,12 @@ public class Game {
                     }
 
                     System.out.println("Humanos:");
-                    imprimirPersonajes("Humano");
+                    sanarPersonajes(raza1);
+                    imprimirPersonajes(raza1);
                     scanner.nextLine();
                     System.out.println("Elfos:");
-                    crearEImprimirPersonajes(raza2,"Elfos");
+                    crearPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
                     scanner.nextLine();
                     round.iniciarCombate(raza1,raza2);
 
@@ -168,9 +179,14 @@ public class Game {
                     System.out.println("Has vencido a los Elfos, para ganar el trono debes vencer a los Orcos");
                     scanner.nextLine();
                     System.out.println("Humanos vivos:");
-                    imprimirPersonajes("Humano");
+                    sanarPersonajes(raza1);
+                    levelUp(raza1);
+                    imprimirPersonajes(raza1);
+                    System.out.println("Tus personajes han subido al nivel 2\n");
+
                     System.out.println("Orcos:");
-                    crearEImprimirPersonajes(raza3,"Orcos");
+                    crearPersonajes("Orco");
+                    imprimirPersonajes(raza3);
                     scanner.nextLine();
                     round.iniciarCombate(raza1,raza3);
 
@@ -191,10 +207,11 @@ public class Game {
                     }
 
                     System.out.println("Elfos:");
-                    imprimirPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
                     scanner.nextLine();
                     System.out.println("Orcos:");
-                    crearEImprimirPersonajes(raza3,"Orcos");
+                    crearPersonajes("Orco");
+                    imprimirPersonajes(raza3);
                     scanner.nextLine();
                     round.iniciarCombate(raza2,raza3);
 
@@ -210,9 +227,14 @@ public class Game {
                     System.out.println("Has vencido a los Orcos, para ganar el trono debes vencer a los Humanos");
                     scanner.nextLine();
                     System.out.println("Elfos vivos:");
-                    imprimirPersonajes("Elfo");
+                    sanarPersonajes(raza2);
+                    levelUp(raza2);
+                    imprimirPersonajes(raza2);
+                    System.out.println("Tus personajes han subido al nivel 2\n");
+
                     System.out.println("Humanos:");
-                    crearEImprimirPersonajes(raza1,"Humanos");
+                    crearPersonajes("Humano");
+                    imprimirPersonajes(raza1);
                     scanner.nextLine();
                     round.iniciarCombate(raza1,raza3);
 
@@ -234,10 +256,11 @@ public class Game {
                     }
 
                     System.out.println("Orcos:");
-                    imprimirPersonajes("Orco");
+                    imprimirPersonajes(raza3);
                     scanner.nextLine();
                     System.out.println("Elfos:");
-                    crearEImprimirPersonajes(raza2,"Elfos");
+                    crearPersonajes("Elfo");
+                    imprimirPersonajes(raza2);
                     scanner.nextLine();
                     round.iniciarCombate(raza3,raza2);
 
@@ -253,9 +276,14 @@ public class Game {
                     System.out.println("Has vencido a los Elfos, para ganar el trono debes vencer a los Humanos");
                     scanner.nextLine();
                     System.out.println("Orcos vivos:");
-                    imprimirPersonajes("Orco");
+                    sanarPersonajes(raza3);
+                    levelUp(raza3);
+                    imprimirPersonajes(raza3);
+                    System.out.println("Tus personajes han subido al nivel 2\n");
+
                     System.out.println("Humanos:");
-                    crearEImprimirPersonajes(raza1,"Humanos");
+                    crearPersonajes("Humano");
+                    imprimirPersonajes(raza1);
                     scanner.nextLine();
                     round.iniciarCombate(raza3,raza1);
 
@@ -269,45 +297,56 @@ public class Game {
                     System.out.println("Intente nuevamente");
                     continue;
             }
+            raza1.clear();
+            raza2.clear();
+            raza3.clear();
             break;
         }
     }
 
-    public void crearEImprimirPersonajes (ArrayList<Character> razaLista, String razaNombre){
+    public void crearPersonajes(String razaNombre){
         if (razaNombre=="Humano"){
             raza1.add(generateCharacter.generateHuman());
             raza1.add(generateCharacter.generateHuman());
             raza1.add(generateCharacter.generateHuman());
-            raza1.get(0).getInfo();
-            raza1.get(1).getInfo();
-            raza1.get(2).getInfo();
         } else if (razaNombre=="Elfo"){
             raza2.add(generateCharacter.generateElf());
             raza2.add(generateCharacter.generateElf());
             raza2.add(generateCharacter.generateElf());
-            raza2.get(0).getInfo();
-            raza2.get(1).getInfo();
-            raza2.get(2).getInfo();
         } else if (razaNombre=="Orco"){
             raza3.add(generateCharacter.generateOrc());
-                raza3.add(generateCharacter.generateOrc());
-                raza3.add(generateCharacter.generateOrc());
-                raza3.get(0).getInfo();
-                raza3.get(1).getInfo();
-                raza3.get(2).getInfo();
+            raza3.add(generateCharacter.generateOrc());
+            raza3.add(generateCharacter.generateOrc());
         }
     }
 
-    public void imprimirPersonajes (String razaNombre){
-        if (razaNombre=="Humano")
-        for(Character pj: raza1){
+    public void imprimirPersonajes (ArrayList<Character> raza){
+        //System.out.println(raza.get(0).getRaza()+"s:");
+        System.out.println("");
+        for(Character pj: raza){
             pj.getInfo();
-        } else if (razaNombre=="Elfo")
-        for(Character pj: raza2){
-            pj.getInfo();
-        } else if (razaNombre=="Orco")
-        for(Character pj: raza3){
-            pj.getInfo();
+        }
+    }
+
+    public void sanarPersonajes(ArrayList<Character> raza){
+        int health=0;
+
+        if(raza.get(0).getRaza()=="Humano"){
+            health = 100;
+        } else if(raza.get(0).getRaza()=="Elfo"){
+            health = 200;
+        } else if (raza.get(0).getRaza()=="Orco"){
+            health = 250;
+        }
+
+        for(Character pj: raza){
+            pj.setHealth(health);
+        }
+    }
+
+    public void levelUp(ArrayList<Character> raza){
+        for(Character pj: raza){
+            pj.setLevel(2);
         }
     }
 

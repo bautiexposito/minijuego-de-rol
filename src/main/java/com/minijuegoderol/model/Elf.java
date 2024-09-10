@@ -8,10 +8,9 @@ public class Elf extends Character{
         super(name, raza, age, level, health, armor, defense, power, agility);
     }
 
-
     @Override
     public int specialAttack() {
-        return parseInt(String.valueOf(getPower()*getAgility()*getHealth()*0.006));
+        return (int) (basicAttack()*1.4);
     }
 
     @Override
