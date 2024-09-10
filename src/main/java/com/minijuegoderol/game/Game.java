@@ -182,7 +182,6 @@ public class Game {
                     sanarPersonajes(raza1);
                     levelUp(raza1);
                     imprimirPersonajes(raza1);
-                    System.out.println("Tus personajes han subido al nivel 2\n");
 
                     System.out.println("Orcos:");
                     crearPersonajes("Orco");
@@ -230,7 +229,6 @@ public class Game {
                     sanarPersonajes(raza2);
                     levelUp(raza2);
                     imprimirPersonajes(raza2);
-                    System.out.println("Tus personajes han subido al nivel 2\n");
 
                     System.out.println("Humanos:");
                     crearPersonajes("Humano");
@@ -279,7 +277,6 @@ public class Game {
                     sanarPersonajes(raza3);
                     levelUp(raza3);
                     imprimirPersonajes(raza3);
-                    System.out.println("Tus personajes han subido al nivel 2\n");
 
                     System.out.println("Humanos:");
                     crearPersonajes("Humano");
@@ -348,6 +345,7 @@ public class Game {
         for(Character pj: raza){
             pj.setLevel(2);
         }
+        System.out.println("Tus personajes han subido al nivel 2\n");
     }
 
     public void imprimirFinalPartida(ArrayList<Character> raza, String razaEnemiga){
