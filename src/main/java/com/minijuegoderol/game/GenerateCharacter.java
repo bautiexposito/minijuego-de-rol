@@ -10,9 +10,9 @@ public class GenerateCharacter {
 
     private Random random = new Random();
 
-    private static final List<String> nombresElf = Arrays.asList("Amarïe", "Éowyn", "Lúthien","Fadabiða","Aredhel","Earendil","Idril","Lia","Nienna");
-    private static final List<String> nombresHuman = Arrays.asList("Batista", "Romeo","Hermes","Diodoro","Spartacus","Marcus","Columbus","Kalendio","Doménico","Isidoro","Leónidas","Teodoro");
-    private static final List<String> nombresOrc = Arrays.asList("Grom","Thrum","Gorrum","Rok","Naznob","Jughog","Sniknob","Homraz","Snak","Badbog");
+    private static final List<String> nombresElf = Arrays.asList("Amarïe", "Éowyn", "Lúthien","Fadabiða","Aredhel","Earendil","Idril","Lia","Nienna","Galadriel","Celeborn","Thranduil","Finrod","Elenwë");
+    private static final List<String> nombresHuman = Arrays.asList("Batista", "Romeo","Hermes","Diodoro","Spartacus","Marcus","Columbus","Kalendio","Doménico","Isidoro","Leónidas","Teodoro","Aurelio","Rómulo","Tiberio");
+    private static final List<String> nombresOrc = Arrays.asList("Grom","Thrum","Gorrum","Rok","Naznob","Jughog","Sniknob","Homraz","Snak","Badbog","Grishnakh", "Mauhur", "Ugluk", "Zugzug", "Morgash");
 
     public Elf generateElf(){
         int numeroAleatorio = random.nextInt(nombresElf.size());

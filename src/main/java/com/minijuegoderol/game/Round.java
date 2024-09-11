@@ -104,4 +104,8 @@ public class Round {
             System.out.println("");
         }
     }
+
+    public void clearListaRazaMuertos(){
+        razaMuertos.clear();
+    }
 }

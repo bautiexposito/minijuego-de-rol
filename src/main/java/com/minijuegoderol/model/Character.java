@@ -101,17 +101,17 @@ public abstract class Character {
     }
 
     public void getInfo(){
-        System.out.println("- - - - - - - - - - - ");
-        System.out.println("Nombre: " + name);
-        System.out.println("Raza: " + raza);
-        System.out.println("Edad: " + age);
-        System.out.println("Nivel: " + level);
-        System.out.println("Salud: " + health);
-        System.out.println("Armadura: " + armor);
-        System.out.println("Defensa: " + defense);
-        System.out.println("Poder: " + power);
-        System.out.println("Agilidad: " + agility);
-        System.out.println("");
+        System.out.println("================================");
+        System.out.println("       "+name+" el "+raza);
+        System.out.println("================================");
+        System.out.printf("Edad        : %d años%n", age);
+        System.out.printf("Nivel       : %d%n", level);
+        System.out.printf("Salud       : %d HP%n", health);
+        System.out.printf("Armadura    : %d%n", armor);
+        System.out.printf("Defensa     : %d%n", defense);
+        System.out.printf("Poder       : %d%n", power);
+        System.out.printf("Agilidad    : %d%n", agility);
+        System.out.println("================================\n");
     }
 
     public void takeDamage(int amount) {

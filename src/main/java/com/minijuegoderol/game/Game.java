@@ -293,7 +293,6 @@ public class Game {
     }
 
     private void imprimirPersonajes (ArrayList<Character> raza){
-        //System.out.println(raza.get(0).getRaza()+"s:");
         System.out.println("");
         for(Character pj: raza){
             pj.getInfo();
@@ -332,9 +331,7 @@ public class Game {
             System.out.println("");
             System.out.println("Has ganado la partida!");
             System.out.println("Felicitaciones a los guerreros vivos:");
-            for(Character pj: raza){
-                pj.getInfo();
-            }
+            imprimirPersonajes(raza);
             System.out.println("");
             System.out.println("Veamos si puedes conseguir el trono en el 'Modo Campaña'...");
         }
@@ -349,9 +346,7 @@ public class Game {
             System.out.println("");
             System.out.println("Felicitaciones! Has ganado la guerra");
             System.out.println("Coronamos a los guerreros vivos:");
-            for(Character pj: raza){
-                pj.getInfo();
-            }
+            imprimirPersonajes(raza);
             System.out.println("");
             System.out.println("El trono es suyo!");
         }
