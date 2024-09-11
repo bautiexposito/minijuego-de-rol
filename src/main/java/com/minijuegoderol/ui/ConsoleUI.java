@@ -17,9 +17,9 @@ public class ConsoleUI {
             System.out.println("");
             System.out.println("- - - - - MENU - - - - -");
             System.out.println("Opcion 1: Iniciar Partida Rapida");
-            System.out.println("Opcion 2: Iniciar la Guerra por el Trono");
+            System.out.println("Opcion 2: Iniciar Modo Campaña");
             System.out.println("Opcion 3: Ver Historial de Partidas");
-            System.out.println("Opcion 4: Eliminar Historial");
+            System.out.println("Opcion 4: Eliminar Historial de Partidas");
             System.out.println("Opcion 5: Leer Instrucciones");
             System.out.println("Opcion 6: Salir");
             System.out.println("");
@@ -77,7 +77,7 @@ public class ConsoleUI {
         System.out.println("Entre pactos rotos, alianzas traicioneras y una historia marcada por el conflicto, el destino del continente está en manos de aquellos que luchen por el poder absoluto.");
         System.out.println("¡Elige a tu campeón y entra en la lucha por 'EL TRONO' de Eldoria!");
         System.out.println("");
-        System.out.println("                    Insert Coin...\n");
+        System.out.println("Insert Coin...\n");
         scanner.nextLine();
     }    
 

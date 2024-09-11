@@ -23,11 +23,11 @@ public class Round {
         int numeroAleatorio = random.nextInt(2);
         if (numeroAleatorio==0){
             System.out.println("Comienzan atacando los "+raza1.get(0).getRaza()+"s\n");
-            System.out.println(" - - - - "+raza1.get(0).getRaza()+" VS "+raza2.get(0).getRaza()+" - - - -\n");
+            System.out.println(" - - - - "+raza1.get(0).getRaza()+"s VS "+raza2.get(0).getRaza()+"s - - - -\n");
             realizarCombate(raza1,raza2);
         } else{
             System.out.println("Comienzan atacando los "+raza2.get(0).getRaza()+"s\n");
-            System.out.println(" - - - - "+raza2.get(0).getRaza()+" VS "+raza1.get(0).getRaza()+" - - - -\n");
+            System.out.println(" - - - - "+raza2.get(0).getRaza()+"s VS "+raza1.get(0).getRaza()+"s - - - -\n");
             realizarCombate(raza2,raza1);
         }
     }

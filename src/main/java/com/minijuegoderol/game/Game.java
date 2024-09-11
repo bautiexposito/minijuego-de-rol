@@ -47,7 +47,6 @@ public class Game {
                     crearPersonajes("Elfo");
                     imprimirPersonajes(raza2);
 
-                    System.out.println(" - - - - Humanos VS Elfos - - - -\n");
                     round.iniciarCombate(raza1,raza2);
 
                     System.out.println("");
@@ -63,7 +62,6 @@ public class Game {
                     crearPersonajes("Orco");
                     imprimirPersonajes(raza3);
 
-                    System.out.println(" - - - - Elfos VS Orcos - - - -\n");
                     round.iniciarCombate(raza2,raza3);
 
                     System.out.println("");
@@ -79,7 +77,6 @@ public class Game {
                     crearPersonajes("Elfo");
                     imprimirPersonajes(raza2);
 
-                    System.out.println(" - - - - Orcos VS Elfos - - - -\n");
                     round.iniciarCombate(raza3,raza2);
 
                     System.out.println("");
@@ -94,6 +91,7 @@ public class Game {
             raza1.clear();
             raza2.clear();
             raza3.clear();
+            round.clearListaRazaMuertos();
             break;
         }
         System.out.println("");
@@ -158,6 +156,7 @@ public class Game {
 
                     System.out.println("Orcos:");
                     crearPersonajes("Orco");
+                    scanner.nextLine();
                     imprimirPersonajes(raza3);
                     scanner.nextLine();
                     round.iniciarCombate(raza1,raza3);
@@ -206,6 +205,7 @@ public class Game {
 
                     System.out.println("Humanos:");
                     crearPersonajes("Humano");
+                    scanner.nextLine();
                     imprimirPersonajes(raza1);
                     scanner.nextLine();
                     round.iniciarCombate(raza1,raza3);
@@ -254,6 +254,7 @@ public class Game {
 
                     System.out.println("Humanos:");
                     crearPersonajes("Humano");
+                    scanner.nextLine();
                     imprimirPersonajes(raza1);
                     scanner.nextLine();
                     round.iniciarCombate(raza3,raza1);
@@ -271,6 +272,7 @@ public class Game {
             raza1.clear();
             raza2.clear();
             raza3.clear();
+            round.clearListaRazaMuertos();
             break;
         }
         LogUtility.disableLogging();
@@ -305,9 +307,9 @@ public class Game {
         if(raza.get(0).getRaza()=="Humano"){
             health = 100;
         } else if(raza.get(0).getRaza()=="Elfo"){
-            health = 200;
+            health = 150;
         } else if (raza.get(0).getRaza()=="Orco"){
-            health = 250;
+            health = 200;
         }
 
         for(Character pj: raza){
@@ -348,7 +350,8 @@ public class Game {
             System.out.println("Coronamos a los guerreros vivos:");
             imprimirPersonajes(raza);
             System.out.println("");
-            System.out.println("El trono es suyo!");
+            System.out.println("¡El trono de Eldoria es ahora tuyo y tuyo solo!");
+            System.out.println("¡La era de tu reinado comienza ahora!");
         }
     }
 
