@@ -1,10 +1,9 @@
 package com.minijuegoderol.game;
 
+import com.minijuegoderol.util.LogUtility;
 import com.minijuegoderol.model.Character;
-import com.minijuegoderol.util.GenerateCharacter;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
@@ -14,11 +13,9 @@ public class Game {
     private ArrayList<Character> raza1;
     private ArrayList<Character> raza2;
     private ArrayList<Character> raza3;
-    private Random random = new Random();
-
-    CombatSystem combatSystem = new CombatSystem();
 
     public Game() {
+        LogUtility.initializeLogging();
         this.generateCharacter = new GenerateCharacter();
         this.raza1 = new ArrayList<>();
         this.raza2 = new ArrayList<>();
@@ -28,6 +25,7 @@ public class Game {
     }
 
     public void iniciarPartida(){
+        LogUtility.enableLogging();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -49,17 +47,8 @@ public class Game {
                     crearPersonajes("Elfo");
                     imprimirPersonajes(raza2);
 
-                    System.out.println("El sistema esta realizando el sorteo...\n");
-                    numeroAleatorio = random.nextInt(2);
-                    if (numeroAleatorio==0){
-                        System.out.println("Comienzan atacando los Humanos\n");
-                        System.out.println(" - - - - Humanos VS Elfos - - - -\n");
-                        round.iniciarCombate(raza1,raza2);
-                    } else{
-                        System.out.println("Comienzan atacando los Elfos\n");
-                        System.out.println(" - - - - Elfos VS Humanos - - - -\n");
-                        round.iniciarCombate(raza2,raza1);
-                    }
+                    System.out.println(" - - - - Humanos VS Elfos - - - -\n");
+                    round.iniciarCombate(raza1,raza2);
 
                     System.out.println("");
                     imprimirFinalPartida(raza1,"Elfos");
@@ -74,17 +63,8 @@ public class Game {
                     crearPersonajes("Orco");
                     imprimirPersonajes(raza3);
 
-                    System.out.println("El sistema esta realizando el sorteo...\n");
-                    numeroAleatorio = random.nextInt(2);
-                    if (numeroAleatorio==0){
-                        System.out.println("Comienzan atacando los Elfos\n");
-                        System.out.println(" - - - - Elfos VS Orcos - - - -\n");
-                        round.iniciarCombate(raza2,raza3);
-                    } else{
-                        System.out.println("Comienzan atacando los Orcos\n");
-                        System.out.println(" - - - - Orcos VS Elfos - - - -\n");
-                        round.iniciarCombate(raza3,raza2);
-                    }
+                    System.out.println(" - - - - Elfos VS Orcos - - - -\n");
+                    round.iniciarCombate(raza2,raza3);
 
                     System.out.println("");
                     imprimirFinalPartida(raza2,"Orcos");
@@ -99,17 +79,8 @@ public class Game {
                     crearPersonajes("Elfo");
                     imprimirPersonajes(raza2);
 
-                    System.out.println("El sistema esta realizando el sorteo...\n");
-                    numeroAleatorio = random.nextInt(2);
-                    if (numeroAleatorio==0){
-                        System.out.println("Comienzan atacando los Orcos\n");
-                        System.out.println(" - - - - Orcos VS Elfos - - - -\n");
-                        round.iniciarCombate(raza3,raza2);
-                    } else{
-                        System.out.println("Comienzan atacando los Orcos\n");
-                        System.out.println(" - - - - Elfos VS Orcos - - - -\n");
-                        round.iniciarCombate(raza2,raza3);
-                    }
+                    System.out.println(" - - - - Orcos VS Elfos - - - -\n");
+                    round.iniciarCombate(raza3,raza2);
 
                     System.out.println("");
                     imprimirFinalPartida(raza3,"Elfos");
@@ -126,9 +97,11 @@ public class Game {
             break;
         }
         System.out.println("");
+        LogUtility.disableLogging();
     }
 
     public void iniciarGuerra(){
+        LogUtility.enableLogging();
         Scanner scanner = new Scanner(System.in);
         int opcion;
         String nombre;
@@ -178,9 +151,9 @@ public class Game {
                     System.out.println("");
                     System.out.println("Has vencido a los Elfos, para ganar el trono debes vencer a los Orcos");
                     scanner.nextLine();
-                    System.out.println("Humanos vivos:");
                     sanarPersonajes(raza1);
                     levelUp(raza1);
+                    System.out.println("Humanos vivos:");
                     imprimirPersonajes(raza1);
 
                     System.out.println("Orcos:");
@@ -196,13 +169,14 @@ public class Game {
                 // Elfos POV:
                 case 2:
                     System.out.println("Ha seleccionado los Elfos para comenzar esta guerra:\n");
-                    for(int i=1; i>=3; i++){
+                    for(int i=1; i<=3; i++){
                         System.out.println("Ingrese los atributos del personaje numero "+i+":");
                         System.out.println("Ingrese el nombre: ");
                         nombre = scanner.next();
                         System.out.println("Ingrese la edad: ");
                         edad = scanner.nextInt();
                         raza2.add(generateCharacter.generateElfWithParameters(nombre,edad));
+                        System.out.println("");
                     }
 
                     System.out.println("Elfos:");
@@ -225,9 +199,9 @@ public class Game {
                     System.out.println("");
                     System.out.println("Has vencido a los Orcos, para ganar el trono debes vencer a los Humanos");
                     scanner.nextLine();
-                    System.out.println("Elfos vivos:");
                     sanarPersonajes(raza2);
                     levelUp(raza2);
+                    System.out.println("Elfos vivos:");
                     imprimirPersonajes(raza2);
 
                     System.out.println("Humanos:");
@@ -249,7 +223,7 @@ public class Game {
                         nombre = scanner.next();
                         System.out.println("Ingrese la edad: ");
                         edad = scanner.nextInt();
-                        raza3.add(generateCharacter.generateHumanWithParameters(nombre,edad));
+                        raza3.add(generateCharacter.generateOrcWithParameters(nombre,edad));
                         System.out.println("");
                     }
 
@@ -273,9 +247,9 @@ public class Game {
                     System.out.println("");
                     System.out.println("Has vencido a los Elfos, para ganar el trono debes vencer a los Humanos");
                     scanner.nextLine();
-                    System.out.println("Orcos vivos:");
                     sanarPersonajes(raza3);
                     levelUp(raza3);
+                    System.out.println("Orcos vivos:");
                     imprimirPersonajes(raza3);
 
                     System.out.println("Humanos:");
@@ -299,9 +273,10 @@ public class Game {
             raza3.clear();
             break;
         }
+        LogUtility.disableLogging();
     }
 
-    public void crearPersonajes(String razaNombre){
+    private void crearPersonajes(String razaNombre){
         if (razaNombre=="Humano"){
             raza1.add(generateCharacter.generateHuman());
             raza1.add(generateCharacter.generateHuman());
@@ -317,7 +292,7 @@ public class Game {
         }
     }
 
-    public void imprimirPersonajes (ArrayList<Character> raza){
+    private void imprimirPersonajes (ArrayList<Character> raza){
         //System.out.println(raza.get(0).getRaza()+"s:");
         System.out.println("");
         for(Character pj: raza){
@@ -325,7 +300,7 @@ public class Game {
         }
     }
 
-    public void sanarPersonajes(ArrayList<Character> raza){
+    private void sanarPersonajes(ArrayList<Character> raza){
         int health=0;
 
         if(raza.get(0).getRaza()=="Humano"){
@@ -341,14 +316,14 @@ public class Game {
         }
     }
 
-    public void levelUp(ArrayList<Character> raza){
+    private void levelUp(ArrayList<Character> raza){
         for(Character pj: raza){
             pj.setLevel(2);
         }
         System.out.println("Tus personajes han subido al nivel 2\n");
     }
 
-    public void imprimirFinalPartida(ArrayList<Character> raza, String razaEnemiga){
+    private void imprimirFinalPartida(ArrayList<Character> raza, String razaEnemiga){
         if(raza.size()==0){
             System.out.println("");
             System.out.println("Has sido derrotado por los "+razaEnemiga);
@@ -365,7 +340,7 @@ public class Game {
         }
     }
 
-    public void imprimirFinalGuerra(ArrayList<Character> raza, String razaEnemiga){
+    private void imprimirFinalGuerra(ArrayList<Character> raza, String razaEnemiga){
         if(raza.size()==0){
             System.out.println("");
             System.out.println("Has sido derrotado por los "+razaEnemiga);

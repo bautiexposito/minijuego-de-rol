@@ -1,0 +1,222 @@
+Partida del dia: 2024-09-10T22:04:13.614285500
+Seleccione una raza:
+Opcion 1: Humanos
+Opcion 2: Elfos
+Opcion 3: Orcos
+Ha seleccionado los Humanos para comenzar esta guerra:
+
+Ingrese los atributos del personaje numero 1:
+Ingrese el nombre: 
+Ingrese la edad: 
+
+Ingrese los atributos del personaje numero 2:
+Ingrese el nombre: 
+Ingrese la edad: 
+
+Ingrese los atributos del personaje numero 3:
+Ingrese el nombre: 
+Ingrese la edad: 
+
+Humanos:
+
+- - - - - - - - - - - 
+Nombre: Robert
+Raza: Humano
+Edad: 40
+Nivel: 1
+Salud: 100
+Armadura: 9
+Defensa: 7
+Poder: 13
+Agilidad: 7
+
+- - - - - - - - - - - 
+Nombre: Hermes
+Raza: Humano
+Edad: 38
+Nivel: 1
+Salud: 100
+Armadura: 10
+Defensa: 10
+Poder: 13
+Agilidad: 7
+
+- - - - - - - - - - - 
+Nombre: Spartacus
+Raza: Humano
+Edad: 33
+Nivel: 1
+Salud: 100
+Armadura: 4
+Defensa: 7
+Poder: 14
+Agilidad: 7
+
+Elfos:
+
+- - - - - - - - - - - 
+Nombre: Nienna
+Raza: Elfo
+Edad: 132
+Nivel: 1
+Salud: 200
+Armadura: 2
+Defensa: 6
+Poder: 4
+Agilidad: 10
+
+- - - - - - - - - - - 
+Nombre: Idril
+Raza: Elfo
+Edad: 296
+Nivel: 1
+Salud: 200
+Armadura: 2
+Defensa: 6
+Poder: 4
+Agilidad: 10
+
+- - - - - - - - - - - 
+Nombre: Nienna
+Raza: Elfo
+Edad: 235
+Nivel: 1
+Salud: 200
+Armadura: 5
+Defensa: 5
+Poder: 5
+Agilidad: 10
+
+El sistema esta realizando el sorteo...
+
+Comienzan atacando los Elfos
+
+ - - - - Elfo VS Humano - - - -
+
+Idril el Elfo VS Spartacus el Humano
+
+- - - - Round 1 - - - -
+Idril el Elfo esta atacando
+Inflige 30 de daño
+Spartacus queda con 70 de vida
+
+Spartacus el Humano esta atacando
+Inflige 87 de daño
+Idril queda con 113 de vida
+
+- - - - Round 2 - - - -
+Idril el Elfo esta atacando
+Inflige 69 de daño
+Spartacus queda con 1 de vida
+
+Spartacus el Humano esta atacando
+Inflige 87 de daño
+Idril queda con 26 de vida
+
+- - - - Round 3 - - - -
+Idril el Elfo esta atacando
+Inflige 69 de daño
+
+*** Spartacus ha muerto ***
+
+Nienna el Elfo VS Robert el Humano
+
+- - - - Round 1 - - - -
+Nienna el Elfo esta atacando
+Inflige 35 de daño
+Robert queda con 65 de vida
+
+Robert el Humano esta atacando
+Inflige 76 de daño
+Nienna queda con 124 de vida
+
+- - - - Round 2 - - - -
+Nienna el Elfo esta atacando
+Inflige 35 de daño
+Robert queda con 30 de vida
+
+Robert el Humano esta atacando
+Inflige 84 de daño
+Nienna queda con 40 de vida
+
+- - - - Round 3 - - - -
+Nienna el Elfo esta atacando
+Inflige 35 de daño
+
+*** Robert ha muerto ***
+
+Nienna el Elfo VS Hermes el Humano
+
+- - - - Round 1 - - - -
+Nienna el Elfo esta atacando
+Inflige 82 de daño
+Hermes queda con 18 de vida
+
+Hermes el Humano esta atacando
+Inflige 84 de daño
+
+*** Nienna ha muerto ***
+
+Nienna el Elfo VS Hermes el Humano
+
+- - - - Round 1 - - - -
+Nienna el Elfo esta atacando
+Inflige 24 de daño
+
+*** Hermes ha muerto ***
+
+Los Elfos han ganado!
+
+A continuacion, mencionamos a los muertos en combate:
+
+- - - - - - - - - - - 
+Nombre: Spartacus
+Raza: Humano
+Edad: 33
+Nivel: 1
+Salud: 0
+Armadura: 4
+Defensa: 7
+Poder: 14
+Agilidad: 7
+
+
+- - - - - - - - - - - 
+Nombre: Robert
+Raza: Humano
+Edad: 40
+Nivel: 1
+Salud: 0
+Armadura: 9
+Defensa: 7
+Poder: 13
+Agilidad: 7
+
+
+- - - - - - - - - - - 
+Nombre: Nienna
+Raza: Elfo
+Edad: 235
+Nivel: 1
+Salud: 0
+Armadura: 5
+Defensa: 5
+Poder: 5
+Agilidad: 10
+
+
+- - - - - - - - - - - 
+Nombre: Hermes
+Raza: Humano
+Edad: 38
+Nivel: 1
+Salud: 0
+Armadura: 10
+Defensa: 10
+Poder: 13
+Agilidad: 7
+
+
+
+Has sido derrotado por los Elfos
+GAME OVER

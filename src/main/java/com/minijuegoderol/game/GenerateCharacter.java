@@ -1,4 +1,4 @@
-package com.minijuegoderol.util;
+package com.minijuegoderol.game;
 
 import com.minijuegoderol.model.*;
 

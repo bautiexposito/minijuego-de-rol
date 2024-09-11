@@ -3,84 +3,63 @@ package com.minijuegoderol.ui;
 import java.util.Scanner;
 
 import com.minijuegoderol.game.Game;
-import com.minijuegoderol.model.Elf;
-import com.minijuegoderol.model.Human;
-import com.minijuegoderol.model.Orc;
-import com.minijuegoderol.util.GenerateCharacter;
+import com.minijuegoderol.util.LogUtility;
 
 public class ConsoleUI {
 
     Scanner scanner = new Scanner(System.in);
+    Game game = new Game();
 
-        Game game = new Game();
-        GenerateCharacter generateCharacter = new GenerateCharacter();
+    public void menu() {
+        historia();
+        int opcion = 1;
+        while (opcion != 6) {
+            System.out.println("");
+            System.out.println("- - - - - MENU - - - - -");
+            System.out.println("Opcion 1: Iniciar Partida Rapida");
+            System.out.println("Opcion 2: Iniciar la Guerra por el Trono");
+            System.out.println("Opcion 3: Ver Historial de Partidas");
+            System.out.println("Opcion 4: Eliminar Historial");
+            System.out.println("Opcion 5: Leer Instrucciones");
+            System.out.println("Opcion 6: Salir");
+            System.out.println("");
+            System.out.println("Ingresar una opcion: ");
+            opcion = scanner.nextInt();
+            System.out.println("");
 
-        public void menu(){
-            historia();
-            int opcion=1;
-            while(opcion!=6){
-                System.out.println("");
-                System.out.println("- - - - - MENU - - - - -");
-                System.out.println("Opcion 1: Iniciar Partida Rapida");
-                System.out.println("Opcion 2: Iniciar la Guerra por el Trono");
-                System.out.println("Opcion 3: Ver Historial de Partidas");
-                System.out.println("Opcion 4: Eliminar Historial");
-                System.out.println("Opcion 5: Leer Instrucciones");
-                System.out.println("Opcion 6: Salir");
-                System.out.println("Opcion 7: Pruebas");
-                System.out.println("");
-                System.out.println("Ingresar una opcion: ");
-                opcion = scanner.nextInt();
-                System.out.println("");
-
-                switch (opcion) {
-                    case 1:
-                        System.out.println("La Partida Rapida esta comenzando...");
-                        System.out.println("");
-                        game.iniciarPartida();
-                        break;
-                    case 2:
-                        System.out.println("La Guerra por el Trono esta comenzando...");
-                        System.out.println("");
-                        game.iniciarGuerra();
-                        break;
-                    case 3:
-                        System.out.println("Historial de Partidas:");
-                        break;
-                    case 4:
-                        System.out.println("El Historial ha sido eliminado");
-                        break;
-                    case 5:
-                        instrucciones();
-                        break;
-                    case 6:
-                        System.out.println("Juego finalizado correctamente");
-                        System.exit(0);
-                        break;
-                    case 7:
-                        System.out.println("Humans:");
-                        Human human = generateCharacter.generateHuman();
-                        System.out.println("Basic attack: " + human.basicAttack());
-                        System.out.println("Defense: " + human.defensePower());
-                        System.out.println("");
-                        System.out.println("Elfs:");
-                        Elf elf = generateCharacter.generateElf();
-                        System.out.println("Basic attack: " + elf.basicAttack());
-                        System.out.println("Defense: " + elf.defensePower());
-                        System.out.println("");
-                        System.out.println("Orcs:");
-                        Orc orc = generateCharacter.generateOrc();
-                        System.out.println("Basic attack: " + orc.basicAttack());
-                        System.out.println("Defense: " + orc.defensePower());
-                        break;
-                    default:
-                        System.out.println("Error al ingresar una opcion");
-                        System.out.println("Intente nuevamente");
-                }
+            switch (opcion) {
+                case 1:
+                    System.out.println("La Partida Rapida esta comenzando...");
+                    System.out.println("");
+                    game.iniciarPartida();
+                    break;
+                case 2:
+                    System.out.println("La Guerra por el Trono esta comenzando...");
+                    System.out.println("");
+                    game.iniciarGuerra();
+                    break;
+                case 3:
+                    System.out.println("Historial de Partidas:\n");
+                    LogUtility.readFile();
+                    break;
+                case 4:
+                    LogUtility.clearLogFile();
+                    break;
+                case 5:
+                    instrucciones();
+                    break;
+                case 6:
+                    System.out.println("Juego finalizado correctamente\n");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Error al ingresar una opcion");
+                    System.out.println("Intente nuevamente");
             }
         }
+    }
 
-    public void historia(){
+    private void historia(){
         System.out.println("");
         System.out.println("En el corazón del continente de Eldoria, tres grandes razas han coexistido durante siglos:");
         System.out.println("Los orgullosos Elfos de Lunaris, los valientes Humanos del Reino de Arvendor, y los feroces Orcos de Gorgath.");
@@ -97,21 +76,26 @@ public class ConsoleUI {
         System.out.println("Las batallas decidirán no solo quién se sentará en el trono, sino también el futuro de Eldoria.");
         System.out.println("Entre pactos rotos, alianzas traicioneras y una historia marcada por el conflicto, el destino del continente está en manos de aquellos que luchen por el poder absoluto.");
         System.out.println("¡Elige a tu campeón y entra en la lucha por 'EL TRONO' de Eldoria!");
-        System.out.println("\n");
+        System.out.println("");
+        System.out.println("                    Insert Coin...\n");
         scanner.nextLine();
     }    
 
-    public void instrucciones(){
+    private void instrucciones(){
         System.out.println("");
         System.out.println("---------------------------------");
         System.out.println("          Instrucciones          ");
-        System.out.println("---------------------------------");
-        System.out.println("");
-        System.out.println("Modos de Juego:");
-        System.out.println("- Partida Rapida: Elije una raza y batalla en una partida de pocos minutos");
-        System.out.println("-'La Guerra por el Trono': El plato principal, enfrentate contra todas las razas de Eldoria e intenta obtener el trono.");
-        System.out.println("");
-        System.out.println("Habilidad de los personajes:");
-        System.out.println("");
+        System.out.println("---------------------------------\n");
+        System.out.println("El objetivo del juego es derrotar a todas las aldeas hasta conseguir el Trono de Eldoria.\n");
+        System.out.println("Selecciona una de las 3 razas disponibles:");
+        System.out.println("1.Humanos: Poseen atributos equilibrados, pero se vuelven muy fuertes al subir de nivel.");
+        System.out.println("2.Elfos: Se destacan por poseer el maximo de agilidad, una buena defensa, pero muy poca fuerza.");
+        System.out.println("3.Orcos: Son los personajes con mas fuerza del juego, pero no son nada defensivos.\n");
+        System.out.println("Los civilizaciones combaten entre si, mediante enfrentamientos de personajes 3 vs 3 ");
+        System.out.println("Cada enfrentamiento esta basado en un sistema de turnos,");
+        System.out.println("donde se juegan 7 rondas como maximo por enfrentamiento, o hasta que algun personaje muera.");
+        System.out.println("Los ataques estan generados automaticamente por una formula generada por los atributos de los personajes.\n");
+        System.out.println("¡La guerra te espera! ¿Estás preparado para el combate?");
+        System.out.println("¡Buena suerte!\n");
     }
 }

@@ -1,7 +1,5 @@
 package com.minijuegoderol.model;
 
-import static java.lang.Integer.parseInt;
-
 public class Elf extends Character{
 
     public Elf(String name, String raza, int age, int level, int health, int armor, int defense, int power, int agility) {
